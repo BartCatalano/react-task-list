@@ -87,8 +87,8 @@ function App() {
 
   const listCompletePrint = () => {
     return ListaComplete.map((task) =>
-      <li key={task.id}>
-        <h3>{task.title}</h3>
+      <li key={task.id} className="listCol">
+        <div> <strong>{task.title}</strong> <span className="tagState">{task.state}</span></div>
         <p>Priority: {task.priority}</p>
         <p>est. Timer {task.estimatedTime}</p>
       </li>);
@@ -98,8 +98,8 @@ function App() {
 
   const secondListPrint = () => {
     return secondList.map((task) =>
-      <li key={task.id}>
-        <h3>{task.title}</h3>
+      <li key={task.id} className="listCol">
+        <div> <strong>{task.title}</strong> <span className="tagState">{task.state}</span></div>
         <p>Priority: {task.priority}</p>
         <p>est. Timer {task.estimatedTime}</p>
       </li>);
@@ -108,15 +108,16 @@ function App() {
 
   return (
     <>
-       <h1 className="backgroundTitle">Task Manager</h1>
+      <h1 className="backgroundTitle">Task Manager</h1>
+      
+        <h2 className="listCol">Current Tasks ({secondList.length})</h2> 
+        <ul>
+          {secondListPrint()}
+        </ul>
+    
 
-      <h2>Curren Task</h2>
-      <ul>
-        {secondListPrint()}
-      </ul>
-
-<hr />
-      <h2>Complete Task</h2>
+      <hr />
+      <h2 className="listCol">Complete Task ({ListaComplete.length}) </h2>
       <ul>{listCompletePrint()}</ul>
 
     </>
