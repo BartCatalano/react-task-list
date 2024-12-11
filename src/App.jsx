@@ -108,12 +108,15 @@ function App() {
 
   return (
     <>
-      <h1>Curren Task</h1>
+       <h1 className="backgroundTitle">Task Manager</h1>
+
+      <h2>Curren Task</h2>
       <ul>
         {secondListPrint()}
       </ul>
 
-      <h1>Complete Task</h1>
+<hr />
+      <h2>Complete Task</h2>
       <ul>{listCompletePrint()}</ul>
 
     </>
