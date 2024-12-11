@@ -72,7 +72,7 @@ const tasks = [
 ];
 
 function App() {
-const ListaComplete = tasks.filter((curtask) => curtask.state !==  );
+const ListaComplete = tasks.filter((curtask) => curtask.state !== 'complete');
 const secondList = [];
 
   return (
