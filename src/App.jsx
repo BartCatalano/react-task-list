@@ -83,21 +83,12 @@ function App() {
   const secondList = tasks.filter((curtask) => curtask.state !== `completed`);
 
 
-  // creo la funzione per la nuova lista completed tramite map
+ 
 
-  const listCompletePrint = () => {
-    return ListaComplete.map((task) =>
-      <li key={task.id} className="listCol">
-        <div> <strong>{task.title}</strong> <span className="tagState">{task.state}</span></div>
-        <p>Priority: {task.priority}</p>
-        <p>est. Timer {task.estimatedTime}</p>
-      </li>);
-  }
+  // creo la funzione per le  lista 
 
-  // creo la funzione per la nuova lista non completed tramite map
-
-  const secondListPrint = () => {
-    return secondList.map((task) =>
+  const ListPrint = (array) => {
+    return array.map((task) =>
       <li key={task.id} className="listCol">
         <div> <strong>{task.title}</strong> <span className="tagState">{task.state}</span></div>
         <p>Priority: {task.priority}</p>
@@ -112,13 +103,13 @@ function App() {
       
         <h2 className="listCol">Current Tasks ({secondList.length})</h2> 
         <ul>
-          {secondListPrint()}
+          {ListPrint(secondList)}
         </ul>
     
 
       <hr />
       <h2 className="listCol">Complete Task ({ListaComplete.length}) </h2>
-      <ul>{listCompletePrint()}</ul>
+      <ul>{ListPrint(ListaComplete)}</ul>
 
     </>
   )
